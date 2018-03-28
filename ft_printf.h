@@ -4,5 +4,6 @@
 # include "attr/attr.h"
 # include "mod/mod.h"
 # include "conv/conv.h"
+# include "handler/handler.h"
 
 #endif

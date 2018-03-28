@@ -12,21 +12,4 @@ void			arg_flag_mod(t_arg *arg, char **ptr);
 void			arg_flag_mod1(t_arg *arg, char **ptr);
 void			arg_flag_mod2(t_arg *arg, char **ptr);
 
-extern t_flag	g_mod[];
-extern t_flag	g_mod2[];
-t_flag 			g_mod[] =	{
-								{'h', mod_h},
-								{'l', mod_l},
-								{'j', mod_j},
-								{'z', mod_z},
-								{'\0', NULL}
-							};
-
-
-t_flag 			g_mod2[] =	{
-								{'h', mod_hh},
-								{'l', mod_ll},
-								{'\0', NULL}
-							};
-
 #endif

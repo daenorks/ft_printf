@@ -19,8 +19,13 @@ size_t		arg_process(va_list args, char **ptr)
 {
 	t_arg		arg;
 
-	if (**ptr == '%' && write(1, "%", 1))
+	(*ptr)++;
+	if (**ptr == '%')
+	{
+		write(1, "%", 1);
+		(*ptr)++;
 		return (1);
+	}
 	arg_init(&arg);
 	arg_flags(&arg, ptr);
 	arg_conv(args, &arg, ptr);

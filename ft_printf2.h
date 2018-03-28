@@ -4,6 +4,7 @@
 # include <stdarg.h>
 # include <wchar.h>
 # include <unistd.h>
+# include <inttypes.h>
 //# include "libft.h"
 
 typedef struct		s_arg
@@ -16,7 +17,7 @@ typedef struct		s_arg
 	char			*str_prefix;
 	unsigned int	width;
 	unsigned int	precision;
-	int				size;
+	size_t				size;
 	enum {
 		hh,
 		h,
@@ -43,5 +44,7 @@ void		ft_putchar(char c);
 void		ft_putstr(char *str);
 int			ft_strlen(char *str);
 void		ft_putnstr(char *str, int n);
+int			ft_isnumber(char c);
+void		print_pad(t_arg *arg, int test);
 
 #endif

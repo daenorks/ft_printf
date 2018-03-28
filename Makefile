@@ -1,4 +1,5 @@
 
+#			conv/conv_char.c
 
 NAME = libftprintf.a
 
@@ -6,7 +7,6 @@ CFLAGS = -Wall -Werror -Wextra
 
 SRCS =		ft_printf.c \
 			conv/conv_int.c \
-			conv/conv_char.c \
 			conv/conv.c \
 			conv/conv_uint.c \
 			mod/mod2.c \
@@ -21,9 +21,11 @@ SRCS =		ft_printf.c \
 
 OBJ = $(SRCS:.c=.o)
 
-$(NAME):
-	gcc $(CFLAGS) -c $(SRCS)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
+
+%.o: %.c
+	gcc $(CFLAGS) -o $@ -c $<
 
 all: $(NAME)
 

@@ -1,4 +1,4 @@
-#include "ft_printf2.h"
+#include "ft_printf.h"
 
 void		arg_flags(t_arg *arg, char **ptr)
 {
@@ -15,7 +15,7 @@ void		arg_flag_width(t_arg *arg, char **ptr)
 		while (ft_isnumber(**ptr))
 		{
 			arg->width = arg->width * 10 + **ptr - '0';
-			*ptr++;
+			(*ptr)++;
 		}
 	}
 }
@@ -25,16 +25,16 @@ void		arg_flag_precision(t_arg *arg, char **ptr)
 	{
 		arg->got_precision = 1;
 		arg->precision = 0;
-		*ptr++;
+		(*ptr)++;
 		if (**ptr == '-')
-			while (ft_isnumber(*((*ptr)++)))
+			while (ft_isnumber(*(++(*ptr))))
 				;
 		else if (**ptr >= '1' && **ptr <= '9')
 		{
 			while (ft_isnumber(**ptr))
 			{
-				arg->precision = arg->width * 10 + **ptr - '0';
-				*ptr++;
+				arg->precision = arg->precision * 10 + **ptr - '0';
+				(*ptr)++;
 			}
 		}
 	}

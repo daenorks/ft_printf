@@ -8,9 +8,9 @@ void	conv_i(va_list args, t_arg *arg)
 void	conv_d(va_list args, t_arg *arg)
 {
 	if(arg->e_length == hh)
-		handle_int(arg, va_arg(args, signed char));
+		handle_int(arg, (signed char)va_arg(args, int));
 	else if (arg->e_length == h)
-		handle_int(arg, va_arg(args, signed short int));
+		handle_int(arg, (signed short int)va_arg(args, int));
 	else if (arg->e_length == l)
 		handle_int(arg, va_arg(args, signed long int));
 	else if (arg->e_length == ll)
@@ -20,5 +20,5 @@ void	conv_d(va_list args, t_arg *arg)
 	else if (arg->e_length == z)
 		handle_int(arg, va_arg(args, ssize_t));
 	else if (arg->e_length == none)
-		handle_int(arg, va_arg(args, signed int));
+		handle_int(arg, va_arg(args, int));
 }

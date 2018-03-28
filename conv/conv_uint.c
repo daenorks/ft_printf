@@ -3,19 +3,19 @@
 void	conv_uint(va_list args, t_arg *arg, char *base, int lbase)
 {
 	if(arg->e_length == hh)
-		handle_uint(arg, va_arg(args, unsigned char), base, lbase);
+		handle_uint((char)va_arg(args, int), arg, base, lbase);
 	else if (arg->e_length == h)
-		handle_uint(arg, va_arg(args, unsigned short int), base, lbase);
+		handle_uint((unsigned short int)va_arg(args, int), arg, base, lbase);
 	else if (arg->e_length == l)
-		handle_uint(arg, va_arg(args, unsigned long int), base, lbase);
+		handle_uint(va_arg(args, unsigned long int), arg, base, lbase);
 	else if (arg->e_length == ll)
-		handle_uint(arg, va_arg(args, unsigned long long  int), base, lbase);
+		handle_uint(va_arg(args, unsigned long long  int), arg, base, lbase);
 	else if (arg->e_length == j)
-		handle_uint(arg, va_arg(args, uintmax_t), base, lbase);
+		handle_uint(va_arg(args, uintmax_t), arg, base, lbase);
 	else if (arg->e_length == z)
-		handle_uint(arg, va_arg(args, size_t), base, lbase);
+		handle_uint(va_arg(args, size_t), arg, base, lbase);
 	else if (arg->e_length == none)
-		handle_uint(arg, va_arg(args, unsigned int), base, lbase);
+		handle_uint(va_arg(args, unsigned int), arg, base, lbase);
 }
 
 void	conv_o(va_list args, t_arg *arg)

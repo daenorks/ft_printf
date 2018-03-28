@@ -1,3 +1,5 @@
+#include "ft_printf.h"
+
 void	print_pad(t_arg *arg, int test)
 {
 	char c;
@@ -5,7 +7,7 @@ void	print_pad(t_arg *arg, int test)
 	c = ' ';
 	if (arg->right_pad == test)
 	{
-		if (arg->pad_zeroes && !arg_right_pad)
+		if (arg->pad_zeroes && !arg->right_pad)
 			c = '0';
 		while (arg->size < arg->width)
 		{

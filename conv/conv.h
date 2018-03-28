@@ -18,15 +18,4 @@ typedef struct		s_conv {
 	void			(*fonc)(va_list args, t_arg *arg);
 }					t_conv;
 
-extern t_conv g_conv[];
-t_conv g_conv[] =	{
-						{'i', conv_i},
-						{'d', conv_d},
-						{'o', conv_o},
-						{'u', conv_u},
-						{'x', conv_x},
-						{'X', conv_X},
-						{'\0', NULL}
-					};
-
 #endif

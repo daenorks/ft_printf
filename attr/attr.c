@@ -17,10 +17,11 @@ void	attr_minus(t_arg *arg)
 
 void	attr_space(t_arg *arg)
 {
-	arg->psign = ' ';
+	if (arg->sign != '+')
+		arg->sign = ' ';
 }
 
 void	attr_plus(t_arg *arg)
 {
-	arg->psign = '+';
+	arg->sign = '+';
 }
