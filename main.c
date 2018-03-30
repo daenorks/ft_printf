@@ -2,5 +2,5 @@
 
 int		main(int ac, char **av)
 {
-	ft_printf("e%+#10.3ifef\n", 42);
+	ft_printf("e%d\n", 0);
 }

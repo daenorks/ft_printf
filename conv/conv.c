@@ -17,7 +17,7 @@ void	arg_conv(va_list args, t_arg *arg, char **ptr)
 	i = 0;
 	while (g_conv[i].c && g_conv[i].c != **ptr)
 		i++;
-	if (g_conv[i].c == **ptr)
+	if (**ptr && g_conv[i].c == **ptr)
 	{
 		g_conv[i].fonc(args, arg);
 		(*ptr)++;
